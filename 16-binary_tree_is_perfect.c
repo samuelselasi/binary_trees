@@ -1,5 +1,7 @@
 #include "binary_trees.h"
 
+int exponent(int x, int y);
+
 /**
  * binary_tree_is_perfect - Function that checks if a binary tree is perfect
  * @tree: Pointer to the root node of the tree to check
