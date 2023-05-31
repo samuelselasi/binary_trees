@@ -40,7 +40,7 @@ avl_t *insert(avl_t **tree, avl_t *parent, avl_t **new_node, int new_val)
 
 	if ((*tree)->n > new_val)
 	{
-		(*tree)->left = insert(&(*tree)->left, *tree, new_nide,
+		(*tree)->left = insert(&(*tree)->left, *tree, new_node,
 				new_val);
 		if ((*tree)->left == NULL)
 			return (NULL);
