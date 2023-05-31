@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 
-bst_t *remove(bst_t *root, int value);
+bst_t *remove_(bst_t *root, int value);
 int remove_type(bst_t *root);
 int successor(bst_t *node);
 void avl_bal(avl_t **tree);
@@ -14,7 +14,7 @@ void avl_bal(avl_t **tree);
  */
 avl_t *avl_remove(avl_t *root, int value)
 {
-	avl_t *avl_root = (avl_t *) remove((bst_t *) root, value);
+	avl_t *avl_root = (avl_t *) remove_((bst_t *) root, value);
 
 	if (avl_root == NULL)
 		return (NULL);
@@ -24,13 +24,13 @@ avl_t *avl_remove(avl_t *root, int value)
 }
 
 /**
- * remove - Function that removes a node from a BST tree
+ * remove_ - Function that removes a node from a BST tree
  * @root: The root of binary tree
  * @value: The node with value to remove
  *
  * Return: The updated tree
  */
-bst_t *remove(bst_t *root, int value)
+bst_t *remove_(bst_t *root, int value)
 {
 	int type = 0;
 
@@ -38,16 +38,16 @@ bst_t *remove(bst_t *root, int value)
 		return (NULL);
 
 	if (value < root->n)
-		remove(root->left, value);
+		remove_(root->left, value);
 
 	else if (value > root->n)
-		remove(root->right, value);
+		remove_(root->right, value);
 
 	else if (value == root->n)
 	{
 		type = remove_type(root);
 		if (type != 0)
-			remove(root->right, type);
+			remove_(root->right, type);
 	}
 	else
 		return (NULL);
