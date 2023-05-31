@@ -27,11 +27,13 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 }
 
 /**
- * avl_sa - helper that builds an AVL tree from an array
- * @root: double pointer to the root node of the subtree
- * @array: a pointer to the first element of the array to be converted
- * @min: lower bound index
- * @max: upper bound index
+ * avl_sa - Function that builds an AVL tree from an array
+ * @root: Double pointer to root subtree
+ * @array: Pointer to first element of array to be converted
+ * @min: The lower bound index
+ * @max: The upper bound index
+ *
+ * Return: None
  */
 void avl_sa(avl_t **root, int *array, size_t min, size_t max)
 {
