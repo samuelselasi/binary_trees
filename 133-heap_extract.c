@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include "0-binary_tree_node.c"
 
 void pre_order(heap_t *tree, heap_t **node, size_t height);
 void make_heap(heap_t *root);
